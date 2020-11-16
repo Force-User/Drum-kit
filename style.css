@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+.drum-app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("image/marshmello-live-event-image-1920x1080.jpg") center no-repeat;
+  background-size: cover;
+}
+.wrapper {
+  width: 1024px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-wrap: wrap;
+ 
+}
+.drum-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+.drum-button {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  background: none;
+  border:3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.473);
+  box-shadow: 0 5px 5px 2px #000;
+  cursor: pointer;
+}
+.drum-button span {
+    font-size:16px;
+}
+
+.press-button {
+  animation: pressBtn .3s ease-in-out;
+  border-color:rgb(255, 174, 0);
+}
+
+@keyframes pressBtn {
+  50% {
+    transform: scale(1.2);
+  }
+}
