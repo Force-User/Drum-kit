@@ -1,14 +1,25 @@
 "use strict";
-window.addEventListener("keydown", playSong);
+window.addEventListener("keydown",(e) => {
+    playSong(e);
+});
+
+const sounds = {}
+const keys = {}
+
+getAllElements();
+
+
+function getAllElements() {
+    document.querySelectorAll('audio').forEach(sound => sounds[sound.dataset.key] = sound);
+    document.querySelectorAll('button').forEach(key => keys[key.dataset.key] = key);
+}
 
 function playSong(e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`button[data-key="${e.keyCode}"]`);
-        changePressButton(key);
-        if(!audio) return;
-        audio.currentTime = 0;
-        audio.play();
-    
+    if(!sounds[e.code]) return;
+    sounds[e.code].currentTime = 0;
+    sounds[e.code].play();
+    changePressButton(keys[e.code]);
+
 }
 
 function changePressButton(button) {
@@ -18,7 +29,4 @@ function changePressButton(button) {
             button.classList.remove("press-button");
         },300)
     }
-    
 }
-
-
